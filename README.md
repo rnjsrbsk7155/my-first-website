@@ -1,1548 +1,1063 @@
+
 <!DOCTYPE html>
 <html lang="ko">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>MUTE ME | Your Color, Your Mood</title>
+<title>MUTE ME - Your Color, Your Mood</title>
 
 <style>
-@import url('https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Noto+Sans+KR:wght@300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Noto+Sans+KR:wght@300;400;500;600&display=swap');
 
 :root {
-  --bg:#FAF8F6;
-  --white:#FFFFFF;
-  --rose:#B88D91;
-  --mauve:#8D737F;
-  --brown:#75635D;
-  --gray:#A69A95;
-  --line:#EAE2DE;
-  --light:#F1E9E5;
-  --ink:#453D3B;
+ --bg:#faf7f5;
+ --paper:#fffdfb;
+ --rose:#b78e92;
+ --mauve:#8d737f;
+ --deep:#70585e;
+ --line:#eadfdb;
+ --soft:#f1e8e4;
+ --text:#443b3b;
 }
 
 * {
-  margin:0;
-  padding:0;
-  box-sizing:border-box;
+ box-sizing:border-box;
+ margin:0;
+ padding:0;
 }
 
-html {scroll-behavior:smooth;}
-
 body {
-  background:var(--bg);
-  color:var(--ink);
-  font-family:'Noto Sans KR',sans-serif;
+ font-family:'Noto Sans KR',sans-serif;
+ background:var(--bg);
+ color:var(--text);
+ line-height:1.7;
 }
 
 button,input {font:inherit;}
-
-a {
-  color:inherit;
-  text-decoration:none;
-}
-
-img {
-  display:block;
-  max-width:100%;
-}
-
-/* HEADER */
+button {cursor:pointer;}
+a {text-decoration:none;color:inherit;}
 
 header {
-  height:76px;
-  background:#FAF8F6F2;
-  backdrop-filter:blur(12px);
-  border-bottom:1px solid var(--line);
-  display:flex;
-  justify-content:space-between;
-  align-items:center;
-  padding:0 7%;
-  position:sticky;
-  top:0;
-  z-index:100;
+ position:sticky;
+ top:0;
+ z-index:100;
+ background:#faf7f5f5;
+ border-bottom:1px solid var(--line);
+}
+
+.nav {
+ max-width:1150px;
+ margin:auto;
+ padding:18px 5%;
+ display:flex;
+ justify-content:space-between;
+ align-items:center;
 }
 
 .logo {
-  font-family:'DM Serif Display',serif;
-  font-size:31px;
-  letter-spacing:2px;
-  color:var(--mauve);
+ font-family:'DM Serif Display',serif;
+ font-size:30px;
+ color:var(--mauve);
+ letter-spacing:3px;
 }
 
 .logo small {
-  display:block;
-  font-family:'Noto Sans KR',sans-serif;
-  font-size:8px;
-  letter-spacing:3px;
-  text-align:center;
-  margin-top:-5px;
+ display:block;
+ font:8px 'Noto Sans KR';
+ text-align:center;
+ letter-spacing:3px;
 }
 
 nav {
-  display:flex;
-  gap:26px;
-}
-
-nav a {
-  font-size:12px;
-  letter-spacing:1px;
-  color:#655A56;
+ display:flex;
+ gap:25px;
+ font-size:12px;
 }
 
 nav a:hover {color:var(--rose);}
 
-.menu-btn {
-  display:none;
-  border:0;
-  background:none;
-  font-size:24px;
-  cursor:pointer;
+section {padding:85px 8%;}
+
+.container {
+ max-width:1150px;
+ margin:auto;
 }
-
-/* COMMON */
-
-.section {
-  padding:100px 8%;
-  scroll-margin-top:75px;
-}
-
-.inner {
-  max-width:1200px;
-  margin:auto;
-}
-
-.eyebrow {
-  font-size:10px;
-  letter-spacing:4px;
-  color:var(--rose);
-  margin-bottom:15px;
-  font-weight:600;
-}
-
-.section-heading {
-  text-align:center;
-  margin-bottom:50px;
-}
-
-.section-heading h2 {
-  font-family:'DM Serif Display',serif;
-  font-size:39px;
-  font-weight:400;
-  margin-bottom:12px;
-}
-
-.section-heading p {
-  font-size:13px;
-  line-height:1.9;
-  color:#998D88;
-}
-
-/* HOME */
 
 .hero {
-  min-height:640px;
-  display:grid;
-  grid-template-columns:1.05fr .95fr;
-  background:#EAE0DC;
+ min-height:560px;
+ display:grid;
+ grid-template-columns:1fr 1fr;
+ background:#e9ded9;
 }
 
 .hero-text {
-  padding:100px 10% 80px 15%;
-  display:flex;
-  flex-direction:column;
-  justify-content:center;
+ padding:80px 10%;
+ display:flex;
+ flex-direction:column;
+ justify-content:center;
 }
 
-.hero-text .mini {
-  font-size:11px;
-  letter-spacing:4px;
-  color:#96767A;
-  margin-bottom:25px;
+.kicker {
+ color:var(--rose);
+ font-size:11px;
+ letter-spacing:3px;
 }
 
-.hero-text h1 {
-  font-family:'DM Serif Display',serif;
-  font-size:76px;
-  font-weight:400;
-  line-height:1.05;
-  color:#6C5358;
+.hero h1 {
+ font:clamp(55px,7vw,85px)/1.05 'DM Serif Display';
+ color:#735c61;
+ margin:25px 0;
 }
 
-.hero-text h1 span {
-  font-style:italic;
-  color:#A98286;
+.hero h1 em {color:#ae858a;}
+
+.hero p {
+ font-size:13px;
+ color:#796c69;
+ line-height:2;
 }
 
-.hero-text p {
-  font-size:14px;
-  line-height:2;
-  color:#766A66;
-  margin-top:25px;
+.btn {
+ display:inline-block;
+ width:max-content;
+ margin-top:25px;
+ padding:12px 23px;
+ border:1px solid var(--mauve);
+ color:var(--deep);
+ font-size:11px;
+ letter-spacing:2px;
 }
 
-.hero-btn {
-  width:fit-content;
-  margin-top:32px;
-  padding:14px 29px;
-  border:1px solid #A98286;
-  color:#765B60;
-  font-size:11px;
-  letter-spacing:2px;
-  transition:.3s;
+.btn:hover {
+ background:var(--mauve);
+ color:white;
 }
 
-.hero-btn:hover {
-  background:#A98286;
-  color:white;
+.hero-image {
+ min-height:450px;
+ background:linear-gradient(135deg,#efd8d2,#d9c0bd);
+ display:flex;
+ align-items:center;
+ justify-content:center;
+ font-size:100px;
 }
 
-.hero-photo {
-  min-height:500px;
-  background:
-    linear-gradient(#00000008,#00000008),
-    url('https://jbeauty.fi/cdn/shop/collections/Romand-Hanbok_1.jpg?v=1726837387')
-    center/cover;
+.ticker {
+ background:var(--deep);
+ color:white;
+ padding:13px;
+ text-align:center;
+ font-size:10px;
+ letter-spacing:2px;
 }
 
-/* TREND BAR */
+.ticker b {color:#e8c9c7;}
 
-.trend-bar {
-  background:#75635D;
-  color:white;
-  text-align:center;
-  padding:17px;
-  font-size:11px;
-  letter-spacing:2px;
+.heading {
+ text-align:center;
+ margin-bottom:40px;
 }
 
-.trend-bar span {
-  color:#E6C5C4;
-  font-weight:bold;
+.heading h2 {
+ font:42px 'DM Serif Display';
+ color:var(--deep);
+ margin:10px 0;
 }
 
-/* PERSONAL COLOR */
+.heading p {
+ font-size:12px;
+ color:#887a78;
+}
 
-.tone-grid {
-  display:grid;
-  grid-template-columns:repeat(3,1fr);
-  gap:17px;
+/* 퍼스널 컬러 */
+
+.tones {
+ display:grid;
+ grid-template-columns:repeat(3,1fr);
+ gap:15px;
 }
 
 .tone-card {
-  background:white;
-  border:1px solid var(--line);
-  padding:27px;
-  cursor:pointer;
-  transition:.3s;
+ background:var(--paper);
+ border:1px solid var(--line);
+ padding:23px;
+ text-align:left;
+ transition:.2s;
 }
 
 .tone-card:hover,
 .tone-card.active {
-  border-color:var(--rose);
-  transform:translateY(-4px);
-  box-shadow:0 10px 25px #75635D12;
-}
-
-.tone-icon {
-  font-size:28px;
-  margin-bottom:17px;
+ border-color:var(--rose);
+ transform:translateY(-3px);
+ box-shadow:0 10px 25px #70585e15;
 }
 
 .tone-card h3 {
-  font-size:18px;
-  margin-bottom:9px;
+ font-size:15px;
+ margin:8px 0;
 }
 
 .tone-card p {
-  font-size:12px;
-  color:#A09590;
-  line-height:1.8;
+ font-size:11px;
+ color:#887a78;
 }
 
 .swatches {
-  display:flex;
-  gap:7px;
-  margin-top:20px;
+ display:flex;
+ gap:8px;
+ margin-top:15px;
 }
 
 .swatches span {
-  width:26px;
-  height:26px;
-  border-radius:50%;
+ width:25px;
+ height:25px;
+ border-radius:50%;
 }
 
-.tone-result {
-  margin-top:35px;
-  padding:30px;
-  background:#F1E9E5;
+.tone-detail {
+ background:var(--soft);
+ padding:25px;
+ margin-top:20px;
+ font-size:12px;
 }
 
-.tone-result h3 {
-  font-size:19px;
-  margin-bottom:10px;
+.tone-detail h3 {
+ font-size:18px;
+ margin-bottom:8px;
 }
 
-.tone-result p {
-  font-size:13px;
-  color:#82746E;
-  line-height:1.9;
+.tone-detail button {
+ margin-top:15px;
+ padding:10px 18px;
+ border:1px solid var(--mauve);
+ background:transparent;
+ color:var(--deep);
 }
 
-/* MAGAZINE */
+/* 매거진 */
 
 .magazine {
-  background:#EDE5E0;
+ background:#eee5e0;
 }
 
-.mag-cover {
-  display:grid;
-  grid-template-columns:1fr 1fr;
-  background:#F8F4F0;
-  min-height:470px;
-  overflow:hidden;
+.cover {
+ display:grid;
+ grid-template-columns:1fr 1fr;
+ background:#faf6f2;
 }
 
-.mag-cover-img {
-  background:
-    url('https://koreanskincare.nl/cdn/shop/files/SPRINGFEVER_FAMILY1.jpg?v=1734607333')
-    center/cover;
-  min-height:450px;
+.cover-image {
+ min-height:350px;
+ background:linear-gradient(140deg,#d7b9b2,#a7838b);
+ display:flex;
+ align-items:center;
+ justify-content:center;
+ font-size:120px;
 }
 
-.mag-cover-text {
-  padding:55px 12%;
-  display:flex;
-  flex-direction:column;
-  justify-content:center;
+.cover-text {
+ padding:50px;
+ display:flex;
+ flex-direction:column;
+ justify-content:center;
 }
 
-.mag-cover-text .issue {
-  font-size:11px;
-  letter-spacing:3px;
-  color:var(--rose);
+.cover-text h2 {
+ font:55px/1.1 'DM Serif Display';
+ color:var(--deep);
+ margin:20px 0;
 }
 
-.mag-cover-text h2 {
-  font-family:'DM Serif Display',serif;
-  font-size:53px;
-  font-weight:400;
-  line-height:1.1;
-  margin:22px 0;
-  color:#715B5D;
+.cover-text p {
+ font-size:12px;
+ color:#887a78;
+ line-height:2;
 }
 
-.mag-cover-text p {
-  font-size:13px;
-  color:#877B76;
-  line-height:2;
-}
-
-.mag-cover-text .read {
-  margin-top:24px;
-  font-size:11px;
-  letter-spacing:2px;
-  color:#A77E83;
-}
-
-/* MAGAZINE ARTICLES */
-
-.article-grid {
-  display:grid;
-  grid-template-columns:repeat(3,1fr);
-  gap:20px;
-  margin-top:30px;
+.articles {
+ display:grid;
+ grid-template-columns:repeat(3,1fr);
+ gap:18px;
+ margin-top:25px;
 }
 
 .article {
-  background:white;
+ background:white;
 }
 
-.article-img {
-  height:210px;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  font-size:65px;
+.article-image {
+ height:160px;
+ display:grid;
+ place-items:center;
+ font-size:60px;
 }
 
-.article-body {
-  padding:25px;
+.article-text {padding:20px;}
+
+.article-text small {
+ color:var(--rose);
+ letter-spacing:2px;
 }
 
-.article-body small {
-  font-size:10px;
-  letter-spacing:2px;
-  color:var(--rose);
+.article-text h3 {
+ font-size:15px;
+ margin:8px 0;
 }
 
-.article-body h3 {
-  font-size:18px;
-  margin:12px 0;
+.article-text p {
+ font-size:11px;
+ color:#887a78;
 }
 
-.article-body p {
-  font-size:12px;
-  color:#928681;
-  line-height:1.9;
+/* 계절 트렌드 */
+
+.season-tabs,
+.rank-tabs,
+.filters {
+ display:flex;
+ justify-content:center;
+ gap:10px;
+ flex-wrap:wrap;
+ margin-bottom:25px;
 }
 
-/* SEASON */
-
-.season-section {
-  background:white;
+.pill {
+ border:1px solid var(--line);
+ background:white;
+ padding:10px 20px;
+ color:#756866;
+ font-size:11px;
 }
 
-.season-tabs {
-  display:flex;
-  justify-content:center;
-  gap:10px;
-  flex-wrap:wrap;
-  margin-bottom:30px;
+.pill.active,
+.pill:hover {
+ background:var(--mauve);
+ color:white;
 }
 
-.season-tabs button {
-  background:white;
-  border:1px solid var(--line);
-  padding:12px 25px;
-  border-radius:30px;
-  color:#776A65;
-  cursor:pointer;
-  font-size:12px;
-}
-
-.season-tabs button.active,
-.season-tabs button:hover {
-  background:#8D737F;
-  border-color:#8D737F;
-  color:white;
-}
-
-.season-display {
-  display:grid;
-  grid-template-columns:1fr 1fr;
-  background:#F5EFEC;
-  min-height:360px;
+.season-panel {
+ display:grid;
+ grid-template-columns:1fr 1fr;
+ background:#f0e6e2;
 }
 
 .season-art {
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  flex-direction:column;
-  padding:40px;
-  background:#EADDD7;
-}
-
-.season-art .emoji {
-  font-size:85px;
+ min-height:300px;
+ display:flex;
+ flex-direction:column;
+ justify-content:center;
+ align-items:center;
+ background:#e6d4ce;
+ font-size:75px;
 }
 
 .season-art h3 {
-  font-family:'DM Serif Display',serif;
-  font-size:34px;
-  margin-top:15px;
-  color:#765B60;
+ font:30px 'DM Serif Display';
+ color:var(--deep);
 }
 
-.season-info {
-  padding:45px;
-  display:flex;
-  flex-direction:column;
-  justify-content:center;
+.season-text {
+ padding:40px;
+ display:flex;
+ flex-direction:column;
+ justify-content:center;
 }
 
-.season-info .label {
-  font-size:10px;
-  letter-spacing:3px;
-  color:var(--rose);
+.season-text h3 {
+ font-size:23px;
+ margin:10px 0;
 }
 
-.season-info h3 {
-  font-size:27px;
-  margin:16px 0;
+.season-text p {
+ font-size:12px;
+ color:#887a78;
 }
 
-.season-info p {
-  font-size:13px;
-  line-height:2;
-  color:#877B76;
+.palette {
+ display:flex;
+ gap:15px;
+ flex-wrap:wrap;
+ margin-top:20px;
 }
 
-.season-palette {
-  display:flex;
-  gap:10px;
-  margin-top:25px;
-  flex-wrap:wrap;
+.palette div {
+ text-align:center;
+ font-size:10px;
 }
 
-.palette-item {
-  font-size:10px;
-  text-align:center;
-  color:#877B76;
+.palette span {
+ display:block;
+ width:30px;
+ height:30px;
+ border-radius:50%;
+ margin:auto auto 5px;
 }
 
-.palette-item span {
-  display:block;
-  width:36px;
-  height:36px;
-  border-radius:50%;
-  margin-bottom:7px;
-}
+/* 랭킹 및 제품 */
 
-/* RANKING */
-
-.ranking {
-  background:#F7F2EF;
-}
-
-.rank-tabs {
-  display:flex;
-  justify-content:center;
-  gap:12px;
-  margin-bottom:38px;
-  flex-wrap:wrap;
-}
-
-.rank-tabs button {
-  padding:12px 26px;
-  border:1px solid #E3D8D3;
-  background:white;
-  cursor:pointer;
-  color:#776A65;
-  font-size:12px;
-}
-
-.rank-tabs button.active {
-  background:#8D737F;
-  color:white;
-  border-color:#8D737F;
-}
-
-.rank-grid {
-  display:grid;
-  grid-template-columns:repeat(3,1fr);
-  gap:22px;
-}
-
-.rank-card {
-  background:white;
-  position:relative;
-  transition:.3s;
-}
-
-.rank-card:hover {
-  transform:translateY(-5px);
-}
-
-.rank-number {
-  position:absolute;
-  top:15px;
-  left:15px;
-  z-index:2;
-  background:#75635D;
-  color:white;
-  width:35px;
-  height:35px;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  font-family:'DM Serif Display',serif;
-  font-size:17px;
-}
-
-.rank-image {
-  height:250px;
-  background:#F4EEEA;
-  overflow:hidden;
-  display:flex;
-  justify-content:center;
-  align-items:center;
-}
-
-.rank-image img {
-  width:100%;
-  height:100%;
-  object-fit:contain;
-  mix-blend-mode:multiply;
-  transition:.4s;
-}
-
-.rank-card:hover .rank-image img {
-  transform:scale(1.04);
-}
-
-.rank-info {
-  padding:23px;
-}
-
-.rank-info .category {
-  font-size:10px;
-  color:var(--rose);
-  letter-spacing:2px;
-}
-
-.rank-info h3 {
-  font-size:16px;
-  margin:10px 0;
-  line-height:1.5;
-}
-
-.rank-info .shade {
-  font-size:12px;
-  color:#9B817D;
-  margin-bottom:12px;
-}
-
-.rank-info p {
-  font-size:11px;
-  color:#978C87;
-  line-height:1.8;
-}
-
-.rank-note {
-  text-align:center;
-  font-size:11px;
-  color:#968984;
-  line-height:1.9;
-  margin-top:30px;
-}
-
-/* PRODUCT PICK */
-
-.product-pick {
-  background:white;
-}
-
-.product-search {
-  width:min(420px,100%);
-  display:block;
-  margin:0 auto 30px;
-  border:1px solid var(--line);
-  border-radius:30px;
-  padding:14px 20px;
-  outline:none;
-  font-size:13px;
-}
-
-.product-filter {
-  display:flex;
-  justify-content:center;
-  flex-wrap:wrap;
-  gap:9px;
-  margin-bottom:35px;
-}
-
-.product-filter button {
-  border:1px solid var(--line);
-  padding:10px 18px;
-  background:white;
-  cursor:pointer;
-  font-size:12px;
-  color:#796D68;
-}
-
-.product-filter button.active {
-  background:#B88D91;
-  color:white;
-}
+.ranking {background:#f4eeeb;}
 
 .product-grid {
-  display:grid;
-  grid-template-columns:repeat(3,1fr);
-  gap:20px;
+ display:grid;
+ grid-template-columns:repeat(3,1fr);
+ gap:18px;
 }
 
 .product-card {
-  border:1px solid var(--line);
-  background:white;
+ background:white;
+ border:1px solid var(--line);
+ position:relative;
 }
 
-.product-photo {
-  height:235px;
-  background:#F6F1EE;
-  overflow:hidden;
+.rank {
+ position:absolute;
+ top:12px;
+ left:12px;
+ background:var(--deep);
+ color:white;
+ padding:5px 12px;
+ z-index:2;
 }
 
-.product-photo img {
-  width:100%;
-  height:100%;
-  object-fit:contain;
-  mix-blend-mode:multiply;
+.product-image {
+ height:220px;
+ background:#f4eeeb;
+ display:grid;
+ place-items:center;
+ overflow:hidden;
 }
 
-.product-details {
-  padding:22px;
+.product-image img {
+ width:100%;
+ height:100%;
+ object-fit:contain;
+ padding:12px;
 }
 
-.product-details .brand {
-  font-size:10px;
-  color:var(--rose);
-  letter-spacing:2px;
+.product-info {padding:20px;}
+
+.product-info small {
+ color:var(--rose);
+ letter-spacing:2px;
 }
 
-.product-details h3 {
-  font-size:16px;
-  margin:10px 0;
+.product-info h3 {
+ font-size:14px;
+ margin:8px 0;
 }
 
-.product-details .shade {
-  font-size:12px;
-  color:#927A75;
+.product-info p {
+ font-size:11px;
+ color:#887a78;
 }
 
-.product-details p {
-  font-size:11px;
-  line-height:1.8;
-  color:#9A8F89;
-  margin-top:12px;
+.favorite {
+ margin-top:12px;
+ border:1px solid var(--line);
+ background:white;
+ color:var(--rose);
+ padding:6px 12px;
+ font-size:11px;
 }
 
-/* FOOTER */
+.favorite.saved {
+ background:#f0dfe0;
+}
+
+.search {
+ display:block;
+ width:min(450px,100%);
+ margin:0 auto 25px;
+ padding:13px 20px;
+ border:1px solid var(--line);
+ border-radius:30px;
+ outline:none;
+}
+
+.note {
+ text-align:center;
+ font-size:10px;
+ color:#887a78;
+ margin-top:25px;
+}
 
 footer {
-  background:#75635D;
-  color:#F5EDE8;
-  text-align:center;
-  padding:55px 20px;
+ background:var(--deep);
+ color:white;
+ text-align:center;
+ padding:45px;
 }
 
-.footer-logo {
-  font-family:'DM Serif Display',serif;
-  font-size:34px;
-  letter-spacing:4px;
-  margin-bottom:12px;
+footer h2 {
+ font:35px 'DM Serif Display';
+ letter-spacing:4px;
 }
 
 footer p {
-  font-size:11px;
-  color:#D4C6C0;
-  line-height:2;
+ font-size:10px;
+ color:#e0d2cd;
+ margin-top:12px;
 }
 
-/* RESPONSIVE */
-
-@media(max-width:800px) {
-  header {padding:0 5%;}
-
-  .menu-btn {display:block;}
-
-  nav {
-    display:none;
-    position:absolute;
-    top:76px;
-    left:0;
-    width:100%;
-    background:var(--bg);
-    padding:25px;
-    flex-direction:column;
-    gap:20px;
-    border-bottom:1px solid var(--line);
-  }
-
-  nav.open {display:flex;}
-
-  .hero {grid-template-columns:1fr;}
-
-  .hero-text {padding:75px 9%;}
-
-  .hero-text h1 {font-size:60px;}
-
-  .hero-photo {min-height:350px;}
-
-  .section {padding:70px 6%;}
-
-  .tone-grid {grid-template-columns:repeat(2,1fr);}
-
-  .mag-cover {grid-template-columns:1fr;}
-
-  .mag-cover-img {min-height:300px;}
-
-  .mag-cover-text {padding:40px 9%;}
-
-  .mag-cover-text h2 {font-size:43px;}
-
-  .article-grid {grid-template-columns:1fr;}
-
-  .season-display {grid-template-columns:1fr;}
-
-  .season-art {min-height:250px;}
-
-  .rank-grid,.product-grid {grid-template-columns:repeat(2,1fr);}
+@media(max-width:750px) {
+ .nav {flex-wrap:wrap;}
+ nav {gap:12px;flex-wrap:wrap;font-size:10px;}
+ .hero {grid-template-columns:1fr;}
+ .hero-image {min-height:250px;}
+ .tones {grid-template-columns:repeat(2,1fr);}
+ .cover,.season-panel {grid-template-columns:1fr;}
+ .articles {grid-template-columns:1fr;}
+ .product-grid {grid-template-columns:repeat(2,1fr);}
+ .cover-text {padding:30px;}
 }
 
-@media(max-width:500px) {
-  .hero-text h1 {font-size:49px;}
-
-  .tone-grid {grid-template-columns:1fr 1fr;}
-
-  .rank-grid,.product-grid {grid-template-columns:1fr;}
-
-  .section-heading h2 {font-size:31px;}
-
-  .rank-image {height:270px;}
+@media(max-width:480px) {
+ section {padding:60px 5%;}
+ .heading h2 {font-size:34px;}
+ .tones,.product-grid {grid-template-columns:1fr;}
+ .season-text {padding:25px;}
 }
 </style>
 </head>
 
 <body>
 
-<!-- HEADER -->
-
 <header>
+ <div class="nav">
   <a href="#home" class="logo">
-    MUTE ME
-    <small>YOUR COLOR, YOUR MOOD</small>
+   MUTE ME
+   <small>YOUR COLOR, YOUR MOOD</small>
   </a>
-
-  <button class="menu-btn" onclick="toggleMenu()">☰</button>
-
-  <nav id="nav">
-    <a href="#home" onclick="closeMenu()">HOME</a>
-    <a href="#personal" onclick="closeMenu()">COLOR</a>
-    <a href="#magazine" onclick="closeMenu()">MAGAZINE</a>
-    <a href="#ranking" onclick="closeMenu()">RANKING</a>
-    <a href="#products" onclick="closeMenu()">PRODUCT</a>
+  <nav>
+   <a href="#home">HOME</a>
+   <a href="#color">COLOR</a>
+   <a href="#magazine">MAGAZINE</a>
+   <a href="#season">SEASON</a>
+   <a href="#ranking">RANKING</a>
+   <a href="#products">PRODUCT</a>
   </nav>
+ </div>
 </header>
 
-<!-- HOME -->
+<main>
+
+<!-- 메인 화면 -->
 
 <section class="hero" id="home">
-  <div class="hero-text">
-    <div class="mini">MUTE ME BEAUTY JOURNAL · 2026</div>
-
-    <h1>
-      Find Your<br>
-      <span>Muted</span><br>
-      Mood.
-    </h1>
-
-    <p>
-      나에게 어울리는 컬러를 발견하는 시간.<br>
-      퍼스널 컬러부터 최신 뷰티 트렌드까지<br>
-      MUTE ME에서 나만의 아름다움을 찾아보세요.
-    </p>
-
-    <a href="#magazine" class="hero-btn">
-      EXPLORE THE MAGAZINE →
-    </a>
-  </div>
-
-  <div class="hero-photo"></div>
+ <div class="hero-text">
+  <div class="kicker">MUTE ME EDITORIAL · 2026</div>
+  <h1>Find Your<br><em>Muted</em><br>Mood.</h1>
+  <p>
+   나에게 어울리는 색을 발견하는 시간.<br>
+   퍼스널 컬러부터 계절별 뷰티 트렌드까지,<br>
+   MUTE ME에서 나만의 분위기를 찾아보세요.
+  </p>
+  <a class="btn" href="#color">DISCOVER YOUR COLOR →</a>
+ </div>
+ <div class="hero-image">🌸 💄</div>
 </section>
 
-<div class="trend-bar">
-  MUTE ME EDITOR'S PICK &nbsp; | &nbsp;
-  <span>2026 AUTUMN : MUTE & NEUTRAL MOOD</span>
+<div class="ticker">
+ THIS MONTH'S MOOD ·
+ <b>MUTED ROSE / SOFT MAUVE / NEUTRAL BEIGE</b>
 </div>
 
-<!-- PERSONAL COLOR -->
+<!-- 퍼스널 컬러 -->
 
-<section class="section" id="personal">
-  <div class="inner">
-    <div class="section-heading">
-      <div class="eyebrow">FIND YOUR COLOR</div>
-      <h2>Personal Color</h2>
-      <p>
-        나의 분위기와 어울리는 컬러를 찾아보세요.<br>
-        원하는 톤을 선택하면 어울리는 실제 화장품을 추천해 드려요.
-      </p>
-    </div>
-
-    <div class="tone-grid" id="toneGrid"></div>
-
-    <div class="tone-result" id="toneResult">
-      <h3>나만의 컬러를 선택해 보세요 ♡</h3>
-      <p>퍼스널 컬러를 선택하면 제품 추천이 나타납니다.</p>
-    </div>
+<section id="color">
+ <div class="container">
+  <div class="heading">
+   <div class="kicker">FIND YOUR COLOR</div>
+   <h2>Personal Color</h2>
+   <p>나에게 어울리는 분위기를 선택해 보세요.</p>
   </div>
+
+  <div class="tones" id="toneGrid"></div>
+  <div class="tone-detail" id="toneDetail">
+   원하는 퍼스널 컬러를 선택해 주세요.
+  </div>
+ </div>
 </section>
 
-<!-- MAGAZINE -->
+<!-- 매거진 -->
 
-<section class="section magazine" id="magazine">
-  <div class="inner">
-    <div class="section-heading">
-      <div class="eyebrow">MUTE ME EDITORIAL</div>
-      <h2>Beauty Magazine</h2>
-      <p>
-        이번 시즌의 컬러, 분위기, 메이크업을<br>
-        매거진처럼 만나보세요.
-      </p>
-    </div>
-
-    <div class="mag-cover">
-      <div class="mag-cover-img"></div>
-
-      <div class="mag-cover-text">
-        <div class="issue">ISSUE NO. 01 · NOVEMBER 2026</div>
-
-        <h2>
-          The Art of<br>
-          Muted Beauty
-        </h2>
-
-        <p>
-          선명한 컬러보다 은은하게 스며드는 색감.<br>
-          말린 장미, 모브 브라운, 로즈 베이지.<br>
-          올가을은 뮤트와 뉴트럴 컬러로<br>
-          나만의 분위기를 완성해 보세요.
-        </p>
-
-        <div class="read">MUTE ME EDITORIAL</div>
-      </div>
-    </div>
-
-    <div class="article-grid">
-
-      <article class="article">
-        <div class="article-img" style="background:#E7D5D0">
-          🌹
-        </div>
-        <div class="article-body">
-          <small>COLOR STORY 01</small>
-          <h3>가을 뮤트의 매력</h3>
-          <p>
-            채도를 낮춘 말린 장미와 모브 계열.
-            부드럽고 차분한 색감으로 자연스러운 분위기를 만들어 보세요.
-          </p>
-        </div>
-      </article>
-
-      <article class="article">
-        <div class="article-img" style="background:#E9DDD1">
-          🤎
-        </div>
-        <div class="article-body">
-          <small>COLOR STORY 02</small>
-          <h3>뉴트럴 컬러의 발견</h3>
-          <p>
-            웜과 쿨의 경계를 넘나드는 로즈 베이지와 토프.
-            다양한 피부 톤에 맞춰 활용하기 좋은 컬러예요.
-          </p>
-        </div>
-      </article>
-
-      <article class="article">
-        <div class="article-img" style="background:#DED7DB">
-          ☁️
-        </div>
-        <div class="article-body">
-          <small>MAKEUP STORY 03</small>
-          <h3>소프트 블러 메이크업</h3>
-          <p>
-            경계를 부드럽게 풀어낸 블러 립과 은은한 치크.
-            자연스러운 피부 표현과 조화를 이루는 메이크업이에요.
-          </p>
-        </div>
-      </article>
-
-    </div>
+<section class="magazine" id="magazine">
+ <div class="container">
+  <div class="heading">
+   <div class="kicker">MUTE ME EDITORIAL</div>
+   <h2>Beauty Magazine</h2>
+   <p>이번 시즌의 컬러와 메이크업 이야기를 만나보세요.</p>
   </div>
+
+  <div class="cover">
+   <div class="cover-image">🌹</div>
+   <div class="cover-text">
+    <small>THE AUTUMN ISSUE · 2026</small>
+    <h2>The Art of<br>Muted Beauty</h2>
+    <p>
+     선명함보다 은은함이 매력적인 계절.<br>
+     말린 장미, 모브 브라운, 로즈 베이지처럼<br>
+     차분한 색으로 나만의 분위기를 완성해 보세요.
+    </p>
+   </div>
+  </div>
+
+  <div class="articles">
+   <article class="article">
+    <div class="article-image" style="background:#ead9d5">🌹</div>
+    <div class="article-text">
+     <small>COLOR STORY 01</small>
+     <h3>가을 뮤트의 매력</h3>
+     <p>말린 장미와 모브, 부드러운 브라운으로 차분한 분위기를 연출해요.</p>
+    </div>
+   </article>
+
+   <article class="article">
+    <div class="article-image" style="background:#e9dfd4">🤎</div>
+    <div class="article-text">
+     <small>COLOR STORY 02</small>
+     <h3>뉴트럴 컬러의 발견</h3>
+     <p>웜과 쿨의 경계를 넘나드는 베이지와 로즈 토프를 활용해요.</p>
+    </div>
+   </article>
+
+   <article class="article">
+    <div class="article-image" style="background:#ded9df">☁️</div>
+    <div class="article-text">
+     <small>MAKEUP STORY 03</small>
+     <h3>소프트 블러 메이크업</h3>
+     <p>블러 립과 은은한 치크, 자연스러운 피부 표현을 만나보세요.</p>
+    </div>
+   </article>
+  </div>
+ </div>
 </section>
 
-<!-- SEASONAL TREND -->
+<!-- 계절별 트렌드 -->
 
-<section class="section season-section" id="season">
-  <div class="inner">
-    <div class="section-heading">
-      <div class="eyebrow">SEASONAL COLOR REPORT</div>
-      <h2>Season Trend</h2>
-      <p>계절을 선택하고 시즌별 추천 컬러를 확인해 보세요.</p>
-    </div>
-
-    <div class="season-tabs">
-      <button class="active" onclick="changeSeason('autumn',this)">🍂 AUTUMN</button>
-      <button onclick="changeSeason('winter',this)">❄️ WINTER</button>
-      <button onclick="changeSeason('spring',this)">🌷 SPRING</button>
-      <button onclick="changeSeason('summer',this)">☀️ SUMMER</button>
-    </div>
-
-    <div class="season-display">
-      <div class="season-art" id="seasonArt">
-        <div class="emoji">🍂</div>
-        <h3>AUTUMN MOOD</h3>
-      </div>
-
-      <div class="season-info">
-        <div class="label" id="seasonLabel">2026 AUTUMN EDITION</div>
-        <h3 id="seasonTitle">가을 뮤트 & 뉴트럴</h3>
-        <p id="seasonDesc">
-          차분한 로즈와 모브, 그레이지 컬러가 중심이 되는 계절.
-          부드러운 음영과 자연스러운 혈색으로 분위기를 완성해 보세요.
-        </p>
-
-        <div class="season-palette" id="seasonPalette"></div>
-      </div>
-    </div>
+<section id="season">
+ <div class="container">
+  <div class="heading">
+   <div class="kicker">SEASONAL COLOR REPORT</div>
+   <h2>Season Trend</h2>
+   <p>계절을 선택하면 해당 시즌의 추천 컬러를 볼 수 있어요.</p>
   </div>
+
+  <div class="season-tabs">
+   <button class="pill active" data-season="autumn">🍂 AUTUMN</button>
+   <button class="pill" data-season="winter">❄️ WINTER</button>
+   <button class="pill" data-season="spring">🌷 SPRING</button>
+   <button class="pill" data-season="summer">☀️ SUMMER</button>
+  </div>
+
+  <div class="season-panel">
+   <div class="season-art" id="seasonArt">
+    <span>🍂</span>
+    <h3>AUTUMN MOOD</h3>
+   </div>
+   <div class="season-text">
+    <div class="kicker" id="seasonLabel">AUTUMN EDITION</div>
+    <h3 id="seasonTitle">가을 뮤트 & 뉴트럴</h3>
+    <p id="seasonDesc">
+     말린 장미, 모브 브라운, 로즈 베이지처럼
+     차분한 저채도 컬러를 활용해 보세요.
+    </p>
+    <div class="palette" id="palette"></div>
+   </div>
+  </div>
+ </div>
 </section>
 
-<!-- RANKING -->
+<!-- 랭킹 -->
 
-<section class="section ranking" id="ranking">
-  <div class="inner">
-    <div class="section-heading">
-      <div class="eyebrow">HOT BEAUTY PRODUCTS</div>
-      <h2>Beauty Ranking</h2>
-      <p>
-        지금 주목받는 뷰티 제품을 확인해 보세요.<br>
-        제품의 브랜드와 색상 번호까지 한눈에!
-      </p>
-    </div>
-
-    <div class="rank-tabs">
-      <button class="active" onclick="showRanking('lip',this)">LIP RANKING</button>
-      <button onclick="showRanking('cheek',this)">CHEEK RANKING</button>
-      <button onclick="showRanking('pact',this)">PACT RANKING</button>
-    </div>
-
-    <div class="rank-grid" id="rankGrid"></div>
-
-    <div class="rank-note" id="rankNote"></div>
+<section class="ranking" id="ranking">
+ <div class="container">
+  <div class="heading">
+   <div class="kicker">EDITOR'S SELECTION</div>
+   <h2>Beauty Ranking</h2>
+   <p>립, 치크, 팩트별 추천 제품을 확인해 보세요.</p>
   </div>
+
+  <div class="rank-tabs">
+   <button class="pill active" data-rank="lip">LIP</button>
+   <button class="pill" data-rank="cheek">CHEEK</button>
+   <button class="pill" data-rank="pact">PACT</button>
+  </div>
+
+  <div class="product-grid" id="rankGrid"></div>
+
+  <p class="note">
+   ※ MUTE ME 편집부 추천 순서이며 실시간 판매량 순위가 아닙니다.
+   정확한 제품 옵션과 호수는 브랜드 공식 정보를 확인해 주세요.
+  </p>
+ </div>
 </section>
 
-<!-- PRODUCT PICK -->
+<!-- 제품 추천 -->
 
-<section class="section product-pick" id="products">
-  <div class="inner">
-    <div class="section-heading">
-      <div class="eyebrow">CURATED FOR YOUR COLOR</div>
-      <h2>Product Pick</h2>
-      <p>
-        퍼스널 컬러별 실제 화장품 추천.<br>
-        브랜드와 제품 호수를 확인하고 나에게 맞는 컬러를 찾아보세요.
-      </p>
-    </div>
-
-    <input
-      type="text"
-      class="product-search"
-      id="productSearch"
-      placeholder="🔍 브랜드, 제품명, 컬러 검색"
-    >
-
-    <div class="product-filter" id="productFilters">
-      <button class="active" onclick="filterProducts('전체',this)">전체</button>
-      <button onclick="filterProducts('봄웜톤',this)">봄웜</button>
-      <button onclick="filterProducts('여름쿨톤',this)">여름쿨</button>
-      <button onclick="filterProducts('가을웜톤',this)">가을웜</button>
-      <button onclick="filterProducts('겨울쿨톤',this)">겨울쿨</button>
-      <button onclick="filterProducts('뉴트럴톤',this)">뉴트럴</button>
-      <button onclick="filterProducts('뮤트톤',this)">뮤트</button>
-    </div>
-
-    <div class="product-grid" id="productGrid"></div>
+<section id="products">
+ <div class="container">
+  <div class="heading">
+   <div class="kicker">CURATED FOR YOUR COLOR</div>
+   <h2>Product Pick</h2>
+   <p>나의 퍼스널 컬러에 맞는 제품을 찾아보세요.</p>
   </div>
+
+  <input class="search" id="search"
+   placeholder="브랜드 · 제품명 · 컬러 검색">
+
+  <div class="filters">
+   <button class="pill active" data-filter="전체">전체</button>
+   <button class="pill" data-filter="봄웜톤">봄웜</button>
+   <button class="pill" data-filter="여름쿨톤">여름쿨</button>
+   <button class="pill" data-filter="가을웜톤">가을웜</button>
+   <button class="pill" data-filter="겨울쿨톤">겨울쿨</button>
+   <button class="pill" data-filter="뉴트럴톤">뉴트럴</button>
+   <button class="pill" data-filter="뮤트톤">뮤트</button>
+  </div>
+
+  <div class="product-grid" id="productGrid"></div>
+ </div>
 </section>
 
-<!-- FOOTER -->
+</main>
+
+<div class="note">
+ MUTE ME는 퍼스널 컬러와 뷰티 제품을 소개하는 큐레이션 사이트입니다.
+ 제품 추천은 참고용이며 실제 발색은 개인에 따라 다를 수 있습니다.
+</div>
 
 <footer>
-  <div class="footer-logo">MUTE ME</div>
-  <p>
-    YOUR COLOR, YOUR MOOD.<br>
-    Find your color. Discover your beauty.<br><br>
-    MUTE ME BEAUTY JOURNAL © 2026
-  </p>
+ <h2>MUTE ME</h2>
+ <p>
+  YOUR COLOR, YOUR MOOD.<br>
+  Find your color. Discover your beauty.<br>
+  © 2026 MUTE ME BEAUTY JOURNAL
+ </p>
 </footer>
 
 <script>
 
-// 이미지 주소
-
-const images = {
-  romand:
-  "https://jbeauty.fi/cdn/shop/collections/Romand-Hanbok_1.jpg?v=1726837387",
-
-  etude:
-  "https://kozmetikumbolt.cdn.shoprenter.hu/custom/kozmetikumbolt/image/data/ETUDE/etude-house-fixing-tint-05-midnight-mauve-koreashop.webp?lastmod=1720647745.1703838527",
-
-  vdl:
-  "https://cloudflare.lipscosme.com/image/d449b6c3b758ac06ce434b31-1715403442.png?auto=avif%2Cwebp&fio=1&orient=1&width=430",
-
-  lily:
-  "https://merryseasons.com.au/cdn/shop/files/01_54c2f855-516e-4f60-aef0-0e48015508b4_1024x1024.jpg?v=1777191533",
-
-  peripera:
-  "https://cdn.hstatic.net/products/200000977139/m__h_ng_peripera_pure_blushed_sunshine_cheek__24_mauve_cream__1__a1e3635e2c424b1b826df7928312a58a_master.png",
-
-  ipkn:
-  "https://images-cdn.ubuy.co.in/675a97298ed2d27a25620741-ipkn-personal-tone-correcting-blur-pact.jpg",
-
-  abouttone:
-  "https://thumbnail8.coupangcdn.com/thumbnails/remote/492x492ex/image/vendor_inventory/c6f6/120be2a06d78bcce3446641de86826865d3d9213e8cc676282a2ff5af475.png",
-
-  innisfree:
-  "https://cdn.makeupshop.ro/imagini-makeup/produse/original/no-sebum-mineral-pact-4-5zpzlun0.jpg"
-};
-
 // 퍼스널 컬러 데이터
 
 const tones = [
-  {
-    name:"봄웜톤",
-    icon:"🌷",
-    desc:"화사하고 생기 있는 피치 & 코랄",
-    colors:["#F3B69D","#EFA18C","#E8C99D"],
-    text:"따뜻하고 밝은 컬러가 특징이에요. 피치, 코랄, 살구 계열의 립과 블러셔로 생기 있는 메이크업을 완성해 보세요."
-  },
-  {
-    name:"여름쿨톤",
-    icon:"🫧",
-    desc:"맑고 부드러운 핑크 & 라벤더",
-    colors:["#D8B8CD","#BBA7C8","#C5D2E1"],
-    text:"차분하고 부드러운 쿨 컬러가 잘 어울려요. 로즈 핑크, 모브, 라벤더로 맑고 은은한 분위기를 연출해 보세요."
-  },
-  {
-    name:"가을웜톤",
-    icon:"🍁",
-    desc:"깊고 따뜻한 브라운 & 브릭",
-    colors:["#A86F50","#C18C67","#8D604A"],
-    text:"깊이감 있는 웜 컬러가 특징이에요. 브릭, 칠리, 테라코타, 브라운 계열을 활용해 분위기 있는 메이크업을 연출해 보세요."
-  },
-  {
-    name:"겨울쿨톤",
-    icon:"❄️",
-    desc:"선명하고 깊은 베리 & 플럼",
-    colors:["#A43D63","#775B87","#D0B5D7"],
-    text:"선명하고 대비감 있는 쿨 컬러가 특징이에요. 베리, 플럼, 와인 계열로 또렷한 포인트 메이크업을 연출해 보세요."
-  },
-  {
-    name:"뉴트럴톤",
-    icon:"🤍",
-    desc:"웜과 쿨의 균형, 로즈 & 베이지",
-    colors:["#C49A8F","#B7A196","#D6BDAE"],
-    text:"웜과 쿨의 성향이 균형을 이루는 컬러예요. 로즈 베이지, 토프, 누드 계열로 자연스럽게 연출해 보세요."
-  },
-  {
-    name:"뮤트톤",
-    icon:"☁️",
-    desc:"부드럽고 차분한 저채도 컬러",
-    colors:["#B58E91","#A49496","#C5ADA1"],
-    text:"채도가 낮고 부드러운 색감이 특징이에요. 말린 장미, 모브 브라운, 더스티 핑크로 은은한 분위기를 완성해 보세요."
-  }
+ {
+  name:"봄웜톤 라이트",
+  group:"봄웜톤",
+  emoji:"🌷",
+  desc:"밝고 맑은 피치와 코랄",
+  colors:["#F5C5AD","#F2A58D","#F5D7A9"],
+  detail:"밝고 따뜻한 피치, 살구, 코랄 컬러로 화사한 분위기를 연출해 보세요."
+ },
+ {
+  name:"봄웜톤 브라이트",
+  group:"봄웜톤",
+  emoji:"🍑",
+  desc:"선명한 코랄과 웜 핑크",
+  colors:["#F28D78","#F5A37C","#E86F68"],
+  detail:"맑고 선명한 코랄과 오렌지 핑크가 포인트예요."
+ },
+ {
+  name:"여름쿨톤 라이트",
+  group:"여름쿨톤",
+  emoji:"🫧",
+  desc:"맑은 핑크와 라벤더",
+  colors:["#E8C9D8","#CFC6E1","#C8D9E7"],
+  detail:"라이트 핑크와 라벤더로 맑고 투명한 분위기를 연출해 보세요."
+ },
+ {
+  name:"여름쿨톤 뮤트",
+  group:"여름쿨톤",
+  emoji:"☁️",
+  desc:"차분한 모브와 더스티 로즈",
+  colors:["#B99AA9","#C6A7AC","#A99BAE"],
+  detail:"모브, 더스티 로즈, 소프트 플럼처럼 회색기가 섞인 컬러가 잘 어울려요."
+ },
+ {
+  name:"가을웜톤 뮤트",
+  group:"가을웜톤",
+  emoji:"🍂",
+  desc:"로즈 브라운과 그레이지",
+  colors:["#B68D85","#A98B7D","#B8A49A"],
+  detail:"말린 장미, 로즈 브라운, 그레이지로 차분하고 부드러운 분위기를 연출해 보세요."
+ },
+ {
+  name:"가을웜톤 딥",
+  group:"가을웜톤",
+  emoji:"🤎",
+  desc:"브릭과 초콜릿 브라운",
+  colors:["#A35F4B","#80513F","#68483D"],
+  detail:"브릭, 테라코타, 초콜릿 브라운으로 깊이 있는 음영을 더해 보세요."
+ },
+ {
+  name:"겨울쿨톤 브라이트",
+  group:"겨울쿨톤",
+  emoji:"💎",
+  desc:"베리와 푸시아",
+  colors:["#C13E72","#A52D61","#D34B87"],
+  detail:"선명한 베리, 푸시아, 체리 레드로 또렷한 포인트를 만들어 보세요."
+ },
+ {
+  name:"겨울쿨톤 딥",
+  group:"겨울쿨톤",
+  emoji:"🫐",
+  desc:"와인과 플럼",
+  colors:["#733A58","#65476E","#4C344C"],
+  detail:"와인, 플럼, 딥 버건디처럼 깊은 쿨 컬러를 추천해요."
+ },
+ {
+  name:"뉴트럴톤",
+  group:"뉴트럴톤",
+  emoji:"🤍",
+  desc:"로즈 베이지와 토프",
+  colors:["#C7A49B","#B9A49B","#D8C2B2"],
+  detail:"로즈 베이지, 토프, 뉴트럴 핑크처럼 균형 잡힌 색을 활용해 보세요."
+ },
+ {
+  name:"뮤트톤",
+  group:"뮤트톤",
+  emoji:"🪞",
+  desc:"저채도 소프트 컬러",
+  colors:["#B58F91","#A59698","#BDA99E"],
+  detail:"뮤트는 웜·쿨과 별개의 온도 구분이 아니라 저채도 색감의 특징이에요. 자신의 웜·쿨 방향과 함께 살펴보세요."
+ }
 ];
 
-// 퍼스널 컬러별 제품 추천
+// 제품 데이터
 
 const products = [
-  {
-    tone:"봄웜톤",brand:"VDL",
-    name:"치크스테인 블러셔",
-    shade:"01 Bouncing Peach",
-    type:"치크",
-    img:images.vdl,
-    desc:"맑은 피치 컬러로 화사한 혈색 표현"
-  },
-  {
-    tone:"봄웜톤",brand:"rom&nd",
-    name:"더 쥬시 래스팅 틴트",
-    shade:"23 Peach Peach Me",
-    type:"립",
-    img:images.romand,
-    desc:"밝고 따뜻한 피치 계열 추천"
-  },
-  {
-    tone:"여름쿨톤",brand:"ETUDE",
-    name:"픽싱 틴트",
-    shade:"05 Midnight Mauve",
-    type:"립",
-    img:images.etude,
-    desc:"차분한 모브 핑크 계열"
-  },
-  {
-    tone:"여름쿨톤",brand:"peripera",
-    name:"맑게 물든 선샤인 치크",
-    shade:"024 Mauve Cream",
-    type:"치크",
-    img:images.peripera,
-    desc:"부드러운 모브 컬러"
-  },
-  {
-    tone:"가을웜톤",brand:"ETUDE",
-    name:"픽싱 틴트",
-    shade:"04 Ginger Milk Tea",
-    type:"립",
-    img:images.etude,
-    desc:"밀크티 베이지 브라운 계열"
-  },
-  {
-    tone:"가을웜톤",brand:"VDL",
-    name:"치크스테인 블러셔",
-    shade:"01 Bouncing Peach",
-    type:"치크",
-    img:images.vdl,
-    desc:"부드러운 피치 베이지"
-  },
-  {
-    tone:"겨울쿨톤",brand:"rom&nd",
-    name:"더 쥬시 래스팅 틴트",
-    shade:"03 Bare Grape",
-    type:"립",
-    img:images.romand,
-    desc:"차분한 쿨 로즈 계열"
-  },
-  {
-    tone:"겨울쿨톤",brand:"peripera",
-    name:"맑게 물든 선샤인 치크",
-    shade:"024 Mauve Cream",
-    type:"치크",
-    img:images.peripera,
-    desc:"쿨한 모브 핑크 계열"
-  },
-  {
-    tone:"뉴트럴톤",brand:"ETUDE",
-    name:"픽싱 틴트",
-    shade:"01 Analog Rose",
-    type:"립",
-    img:images.etude,
-    desc:"균형 잡힌 로즈 컬러"
-  },
-  {
-    tone:"뉴트럴톤",brand:"lilybyred",
-    name:"러브빔 치크밤",
-    shade:"06 Fluffy Peach",
-    type:"치크",
-    img:images.lily,
-    desc:"자연스러운 피치 컬러"
-  },
-  {
-    tone:"뮤트톤",brand:"ETUDE",
-    name:"픽싱 틴트",
-    shade:"05 Midnight Mauve",
-    type:"립",
-    img:images.etude,
-    desc:"그레이시 모브 핑크"
-  },
-  {
-    tone:"뮤트톤",brand:"peripera",
-    name:"맑게 물든 선샤인 치크",
-    shade:"024 Mauve Cream",
-    type:"치크",
-    img:images.peripera,
-    desc:"채도를 낮춘 말린 장미빛"
-  },
-  {
-    tone:"뮤트톤",brand:"ABOUT_TONE",
-    name:"블러 파우더 팩트",
-    shade:"01 Fair",
-    type:"팩트",
-    img:images.abouttone,
-    desc:"부드러운 블러 피부 표현"
-  }
+ {tone:"봄웜톤",brand:"rom&nd",name:"쥬시 래스팅 틴트",shade:"피치 계열 컬러",type:"립",image:"https://jbeauty.fi/cdn/shop/collections/Romand-Hanbok_1.jpg?v=1726837387"},
+ {tone:"봄웜톤",brand:"VDL",name:"치크스테인 블러셔",shade:"피치 계열 컬러",type:"치크",image:"https://cloudflare.lipscosme.com/image/d449b6c3b758ac06ce434b31-1715403442.png?auto=avif%2Cwebp&fio=1&orient=1&width=430"},
+ {tone:"여름쿨톤",brand:"ETUDE",name:"픽싱 틴트",shade:"05 Midnight Mauve",type:"립",image:"https://kozmetikumbolt.cdn.shoprenter.hu/custom/kozmetikumbolt/image/data/ETUDE/etude-house-fixing-tint-05-midnight-mauve-koreashop.webp"},
+ {tone:"여름쿨톤",brand:"peripera",name:"선샤인 치크",shade:"024 Mauve Cream",type:"치크",image:"https://cdn.hstatic.net/products/200000977139/m__h_ng_peripera_pure_blushed_sunshine_cheek__24_mauve_cream__1__a1e3635e2c424b1b826df7928312a58a_master.png"},
+ {tone:"가을웜톤",brand:"rom&nd",name:"쥬시 래스팅 틴트",shade:"로즈 브라운 계열",type:"립",image:"https://jbeauty.fi/cdn/shop/collections/Romand-Hanbok_1.jpg?v=1726837387"},
+ {tone:"가을웜톤",brand:"VDL",name:"치크스테인 블러셔",shade:"웜 베이지 계열",type:"치크",image:"https://cloudflare.lipscosme.com/image/d449b6c3b758ac06ce434b31-1715403442.png?auto=avif%2Cwebp&fio=1&orient=1&width=430"},
+ {tone:"겨울쿨톤",brand:"rom&nd",name:"쥬시 래스팅 틴트",shade:"베리·플럼 계열",type:"립",image:"https://jbeauty.fi/cdn/shop/collections/Romand-Hanbok_1.jpg?v=1726837387"},
+ {tone:"겨울쿨톤",brand:"peripera",name:"선샤인 치크",shade:"쿨 핑크 계열",type:"치크",image:"https://cdn.hstatic.net/products/200000977139/m__h_ng_peripera_pure_blushed_sunshine_cheek__24_mauve_cream__1__a1e3635e2c424b1b826df7928312a58a_master.png"},
+ {tone:"뉴트럴톤",brand:"ETUDE",name:"픽싱 틴트",shade:"로즈 베이지 계열",type:"립",image:"https://kozmetikumbolt.cdn.shoprenter.hu/custom/kozmetikumbolt/image/data/ETUDE/etude-house-fixing-tint-05-midnight-mauve-koreashop.webp"},
+ {tone:"뉴트럴톤",brand:"lilybyred",name:"러브빔 치크밤",shade:"피치·로즈 계열",type:"치크",image:"https://merryseasons.com.au/cdn/shop/files/01_54c2f855-516e-4f60-aef0-0e48015508b4_1024x1024.jpg"},
+ {tone:"뮤트톤",brand:"ETUDE",name:"픽싱 틴트",shade:"05 Midnight Mauve",type:"립",image:"https://kozmetikumbolt.cdn.shoprenter.hu/custom/kozmetikumbolt/image/data/ETUDE/etude-house-fixing-tint-05-midnight-mauve-koreashop.webp"},
+ {tone:"뮤트톤",brand:"peripera",name:"선샤인 치크",shade:"024 Mauve Cream",type:"치크",image:"https://cdn.hstatic.net/products/200000977139/m__h_ng_peripera_pure_blushed_sunshine_cheek__24_mauve_cream__1__a1e3635e2c424b1b826df7928312a58a_master.png"},
+ {tone:"뮤트톤",brand:"IPKN&",name:"퍼스널 톤 코렉팅 블러 팩트",shade:"Lavender",type:"팩트",image:"https://images-cdn.ubuy.co.in/675a97298ed2d27a25620741-ipkn-personal-tone-correcting-blur-pact.jpg"},
+ {tone:"가을웜톤",brand:"innisfree",name:"노세범 미네랄 팩트",shade:"기본 컬러",type:"팩트",image:"https://cdn.makeupshop.ro/imagini-makeup/produse/original/no-sebum-mineral-pact-4-5zpzlun0.jpg"}
 ];
-
-// 계절별 트렌드
-
-const seasons = {
-  autumn:{
-    emoji:"🍂",
-    name:"AUTUMN MOOD",
-    bg:"#EADDD2",
-    title:"가을 뮤트 & 뉴트럴",
-    desc:"말린 장미, 모브 브라운, 로즈 베이지, 그레이지. 차분한 저채도 컬러를 중심으로 부드러운 음영 메이크업을 연출해 보세요.",
-    colors:[
-      ["말린 장미","#B58388"],
-      ["모브","#A58B96"],
-      ["로즈 베이지","#C49B91"],
-      ["그레이지","#A99B91"],
-      ["브라운","#927264"]
-    ]
-  },
-  winter:{
-    emoji:"❄️",
-    name:"WINTER MOOD",
-    bg:"#E4E1EA",
-    title:"겨울쿨 & 딥 뉴트럴",
-    desc:"베리, 플럼, 딥 로즈, 차콜 등 깊이감 있는 색상이 포인트예요. 선명한 립과 부드러운 피부 표현을 조합해 보세요.",
-    colors:[
-      ["베리","#A33B5F"],
-      ["플럼","#795E88"],
-      ["딥 로즈","#A66D80"],
-      ["차콜","#69636D"]
-    ]
-  },
-  spring:{
-    emoji:"🌷",
-    name:"SPRING MOOD",
-    bg:"#F5E5DF",
-    title:"봄웜 & 소프트 뉴트럴",
-    desc:"피치, 코랄, 살구, 크림 베이지 등 따뜻하고 밝은 컬러로 화사하고 생기 있는 메이크업을 연출해 보세요.",
-    colors:[
-      ["피치","#F2B39D"],
-      ["코랄","#E88D79"],
-      ["크림","#EBD5B8"],
-      ["살구","#E6AC85"]
-    ]
-  },
-  summer:{
-    emoji:"☀️",
-    name:"SUMMER MOOD",
-    bg:"#E6EAF1",
-    title:"여름쿨 & 라이트 뮤트",
-    desc:"라벤더, 소프트 핑크, 모브, 스카이 블루 등 시원하고 부드러운 컬러를 활용해 투명한 분위기를 완성해 보세요.",
-    colors:[
-      ["라벤더","#C7B6D9"],
-      ["핑크","#E4BBCB"],
-      ["모브","#AB91A8"],
-      ["블루","#B7CADB"]
-    ]
-  }
-};
 
 // 랭킹 데이터
 
 const rankings = {
-  lip:[
-    {
-      rank:"01",
-      brand:"ETUDE",
-      name:"Fixing Tint",
-      shade:"#05 Midnight Mauve",
-      img:images.etude,
-      desc:"차분한 모브 컬러의 픽싱 틴트. 4g"
-    },
-    {
-      rank:"02",
-      brand:"MIAEL",
-      name:"Light Veil Tint",
-      shade:"Spring Light Warm-tone",
-      img:images.romand,
-      desc:"가벼운 베일 느낌의 웜톤 틴트"
-    },
-    {
-      rank:"03",
-      brand:"rom&nd",
-      name:"The Juicy Lasting Tint",
-      shade:"#03 Bare Grape",
-      img:images.romand,
-      desc:"촉촉한 광택감의 쿨 로즈 계열 틴트. 3.5g"
-    }
-  ],
-
-  cheek:[
-    {
-      rank:"01",
-      brand:"VDL",
-      name:"Cheek Stain Blusher",
-      shade:"#01 Bouncing Peach",
-      img:images.vdl,
-      desc:"부드러운 피치 계열 파우더 치크. 6g"
-    },
-    {
-      rank:"02",
-      brand:"lilybyred",
-      name:"Luvbeam Cheek Balm",
-      shade:"#06 Fluffy Peach",
-      img:images.lily,
-      desc:"사랑스러운 피치 컬러의 치크밤. 3.5g"
-    },
-    {
-      rank:"03",
-      brand:"peripera",
-      name:"Pure Blushed Sunshine Cheek",
-      shade:"#024 Mauve Cream",
-      img:images.peripera,
-      desc:"차분한 모브 컬러의 파우더 블러셔. 4.2g"
-    }
-  ],
-
-  pact:[
-    {
-      rank:"01",
-      brand:"IPKN&",
-      name:"Personal Tone Correcting Blur Pact",
-      shade:"Lavender · 5.5g",
-      img:images.ipkn,
-      desc:"전체 파우더·컴팩트 순위 5위. 라벤더 컬러 팩트"
-    },
-    {
-      rank:"02",
-      brand:"ABOUT_TONE",
-      name:"Blur Powder Pact",
-      shade:"01 Fair · 9g",
-      img:images.abouttone,
-      desc:"전체 파우더·컴팩트 순위 7위. 블러 파우더 팩트"
-    },
-    {
-      rank:"03",
-      brand:"innisfree",
-      name:"No-Sebum Mineral Pact",
-      shade:"8.5g",
-      img:images.innisfree,
-      desc:"전체 파우더·컴팩트 순위 9위. 노세범 컴팩트"
-    }
-  ]
+ lip:[2,4,10],
+ cheek:[3,5,9],
+ pact:[12,13,11]
 };
 
-// 메뉴
+// 계절 데이터
 
-function toggleMenu(){
-  document.getElementById("nav").classList.toggle("open");
-}
+const seasons = {
+ autumn:{
+  emoji:"🍂",title:"가을 뮤트 & 뉴트럴",
+  desc:"말린 장미, 모브 브라운, 로즈 베이지처럼 차분한 저채도 컬러를 활용해 보세요.",
+  colors:[["말린 장미","#B58388"],["모브","#A58B96"],["로즈 베이지","#C49B91"],["그레이지","#A99B91"]]
+ },
+ winter:{
+  emoji:"❄️",title:"겨울 쿨 & 딥 컬러",
+  desc:"베리, 플럼, 딥 로즈와 같은 깊이 있는 색으로 포인트를 줘보세요.",
+  colors:[["베리","#A33B5F"],["플럼","#795E88"],["딥 로즈","#A66D80"],["차콜","#69636D"]]
+ },
+ spring:{
+  emoji:"🌷",title:"봄 웜 & 소프트 컬러",
+  desc:"피치, 코랄, 살구, 크림 베이지처럼 따뜻하고 밝은 색으로 화사한 분위기를 연출해 보세요.",
+  colors:[["피치","#F2B39D"],["코랄","#E88D79"],["크림","#EBD5B8"],["살구","#E6AC85"]]
+ },
+ summer:{
+  emoji:"☀️",title:"여름 쿨 & 라이트 뮤트",
+  desc:"라벤더, 소프트 핑크, 모브 등 시원하고 부드러운 색을 활용해 보세요.",
+  colors:[["라벤더","#C7B6D9"],["핑크","#E4BBCB"],["모브","#AB91A8"],["블루","#B7CADB"]]
+ }
+};
 
-function closeMenu(){
-  document.getElementById("nav").classList.remove("open");
-}
+// 톤 화면 출력
 
-// 톤 카드
+function renderTones() {
+ const grid=document.getElementById("toneGrid");
 
-const toneGrid=document.getElementById("toneGrid");
-const toneResult=document.getElementById("toneResult");
+ grid.innerHTML=tones.map((t,i)=>`
+  <button class="tone-card" data-index="${i}">
+   <div>${t.emoji}</div>
+   <h3>${t.name}</h3>
+   <p>${t.desc}</p>
+   <div class="swatches">
+    ${t.colors.map(c=>`<span style="background:${c}"></span>`).join("")}
+   </div>
+  </button>
+ `).join("");
 
-toneGrid.innerHTML=tones.map((t,i)=>`
-  <div class="tone-card" onclick="selectTone(${i})">
-    <div class="tone-icon">${t.icon}</div>
-    <h3>${t.name}</h3>
-    <p>${t.desc}</p>
-    <div class="swatches">
-      ${t.colors.map(c=>`<span style="background:${c}"></span>`).join("")}
-    </div>
-  </div>
-`).join("");
+ grid.querySelectorAll("button").forEach(btn=>{
+  btn.addEventListener("click",()=>{
+   const i=Number(btn.dataset.index);
+   const t=tones[i];
 
-function selectTone(i){
-  const t=tones[i];
+   grid.querySelectorAll("button").forEach(b=>b.classList.remove("active"));
+   btn.classList.add("active");
 
-  document.querySelectorAll(".tone-card").forEach((card,index)=>{
-    card.classList.toggle("active",index===i);
-  });
-
-  toneResult.innerHTML=`
-    <h3>${t.icon} ${t.name} COLOR GUIDE</h3>
-    <p>${t.text}</p>
-    <br>
-    <button onclick="filterProducts('${t.name}',document.querySelectorAll('#productFilters button')[${i+1}])"
-      style="border:0;background:#8D737F;color:white;padding:12px 22px;cursor:pointer">
-      ${t.name} 제품 보러가기 →
+   document.getElementById("toneDetail").innerHTML=`
+    <h3>${t.emoji} ${t.name}</h3>
+    <p>${t.detail}</p>
+    <button onclick="filterProducts('${t.group}')">
+     이 톤의 제품 보기 →
     </button>
-  `;
+   `;
+  });
+ });
 }
 
-// 계절 변경
+// 계절 화면 출력
 
-function changeSeason(key,btn){
-  const s=seasons[key];
+function renderSeason(key) {
+ const s=seasons[key];
 
-  document.querySelectorAll(".season-tabs button").forEach(b=>{
-    b.classList.remove("active");
-  });
+ document.getElementById("seasonArt").innerHTML=`
+  <span>${s.emoji}</span>
+  <h3>${key.toUpperCase()} MOOD</h3>
+ `;
 
-  btn.classList.add("active");
+ document.getElementById("seasonTitle").textContent=s.title;
+ document.getElementById("seasonDesc").textContent=s.desc;
 
-  document.getElementById("seasonArt").style.background=s.bg;
-  document.getElementById("seasonArt").innerHTML=`
-    <div class="emoji">${s.emoji}</div>
-    <h3>${s.name}</h3>
-  `;
+ document.getElementById("palette").innerHTML=
+  s.colors.map(c=>`
+   <div>
+    <span style="background:${c[1]}"></span>
+    ${c[0]}
+   </div>
+  `).join("");
 
-  document.getElementById("seasonLabel").textContent=key.toUpperCase()+" SEASONAL COLOR";
-  document.getElementById("seasonTitle").textContent=s.title;
-  document.getElementById("seasonDesc").textContent=s.desc;
+ document.querySelectorAll("[data-season]").forEach(b=>{
+  b.classList.toggle("active",b.dataset.season===key);
+ });
+}
 
-  document.getElementById("seasonPalette").innerHTML=
-    s.colors.map(c=>`
-      <div class="palette-item">
-        <span style="background:${c[1]}"></span>
-        ${c[0]}
-      </div>
-    `).join("");
+// 제품 카드
+
+function productCard(p,index,ranking=false) {
+ const id=products.indexOf(p);
+
+ return `
+ <article class="product-card">
+  ${ranking?`<div class="rank">${index+1}위</div>`:""}
+  <div class="product-image">
+   <img src="${p.image}" alt="${p.brand} ${p.name}"
+    loading="lazy"
+    onerror="this.style.display='none';">
+  </div>
+  <div class="product-info">
+   <small>${p.brand} · ${p.tone}</small>
+   <h3>${p.name}</h3>
+   <p>${p.shade}</p>
+   <p>${p.type}</p>
+   ${ranking?"":`
+    <button class="favorite" data-id="${id}">♡ 저장</button>
+   `}
+  </div>
+ </article>
+ `;
 }
 
 // 랭킹 출력
 
-function showRanking(key,btn){
-  document.querySelectorAll(".rank-tabs button").forEach(b=>{
-    b.classList.remove("active");
-  });
+function renderRanking(type) {
+ const list=rankings[type];
 
-  btn.classList.add("active");
+ document.getElementById("rankGrid").innerHTML=
+  list.map((id,i)=>productCard(products[id],i,true)).join("");
 
-  const list=rankings[key];
-
-  document.getElementById("rankGrid").innerHTML=list.map(item=>`
-    <div class="rank-card">
-      <div class="rank-number">${item.rank}</div>
-      <div class="rank-image">
-        <img src="${item.img}" alt="${item.brand} ${item.name}"
-          onerror="this.style.display='none';this.parentElement.innerHTML='<span style=font-size:65px>💄</span>'">
-      </div>
-      <div class="rank-info">
-        <div class="category">${key.toUpperCase()} · RANKING</div>
-        <h3>${item.brand} ${item.name}</h3>
-        <div class="shade">${item.shade}</div>
-        <p>${item.desc}</p>
-      </div>
-    </div>
-  `).join("");
-
-  const notes={
-    lip:"출처: 화해 트렌딩 립 스테인 순위 · 2026.11.17 업데이트 · 상위 3개 제품",
-    cheek:"출처: 화해 트렌딩 블러셔 순위 · 2026.11.17 업데이트 · 상위 3개 제품",
-    pact:"출처: 화해 트렌딩 파우더·컴팩트 순위 · 2026.11.18 업데이트 · 팩트형 제품의 원 순위 5·7·9위"
-  };
-
-  document.getElementById("rankNote").textContent=
-    notes[key]+" | 플랫폼과 집계 기간에 따라 순위는 달라질 수 있습니다.";
+ document.querySelectorAll("[data-rank]").forEach(b=>{
+  b.classList.toggle("active",b.dataset.rank===type);
+ });
 }
 
-// 제품 추천
+// 제품 필터 및 검색
 
 let currentFilter="전체";
 
-function renderProducts(){
-  const keyword=document.getElementById("productSearch").value.toLowerCase();
+function filterProducts(filter) {
+ currentFilter=filter;
 
-  const filtered=products.filter(p=>{
-    const matchTone=currentFilter==="전체"||p.tone===currentFilter;
-    const matchText=(p.brand+p.name+p.shade+p.tone+p.type).toLowerCase().includes(keyword);
-    return matchTone&&matchText;
-  });
+ document.querySelectorAll("[data-filter]").forEach(b=>{
+  b.classList.toggle("active",b.dataset.filter===filter);
+ });
 
-  document.getElementById("productGrid").innerHTML=
-    filtered.length ? filtered.map(p=>`
-      <div class="product-card">
-        <div class="product-photo">
-          <img src="${p.img}" alt="${p.brand} ${p.name} ${p.shade}"
-            onerror="this.style.display='none';this.parentElement.innerHTML='<span style=font-size:65px;display:grid;place-items:center;height:100%>💗</span>'">
-        </div>
-        <div class="product-details">
-          <div class="brand">${p.brand} · ${p.tone}</div>
-          <h3>${p.name}</h3>
-          <div class="shade">${p.shade}</div>
-          <p>${p.desc}</p>
-        </div>
-      </div>
-    `).join("") :
-    "<p style='grid-column:1/-1;text-align:center;padding:40px'>검색 결과가 없습니다.</p>";
+ renderProducts();
 }
 
-function filterProducts(tone,btn){
-  currentFilter=tone;
+function renderProducts() {
+ const keyword=document.getElementById("search").value.toLowerCase();
 
-  document.querySelectorAll("#productFilters button").forEach(b=>{
-    b.classList.remove("active");
+ const list=products.filter(p=>
+  (currentFilter==="전체" || p.tone===currentFilter) &&
+  [p.brand,p.name,p.shade,p.tone,p.type]
+   .join(" ").toLowerCase().includes(keyword)
+ );
+
+ document.getElementById("productGrid").innerHTML=
+  list.length
+   ?list.map(p=>productCard(p,0)).join("")
+   :"<p>검색 결과가 없습니다.</p>";
+
+ document.querySelectorAll(".favorite").forEach(btn=>{
+  const id=btn.dataset.id;
+  let saved=JSON.parse(localStorage.getItem("muteFavorites")||"[]");
+
+  if(saved.includes(id)){
+   btn.classList.add("saved");
+   btn.textContent="♥ 저장됨";
+  }
+
+  btn.addEventListener("click",()=>{
+   let arr=JSON.parse(localStorage.getItem("muteFavorites")||"[]");
+
+   if(arr.includes(id)){
+    arr=arr.filter(x=>x!==id);
+   } else {
+    arr.push(id);
+   }
+
+   localStorage.setItem("muteFavorites",JSON.stringify(arr));
+   btn.classList.toggle("saved",arr.includes(id));
+   btn.textContent=arr.includes(id)?"♥ 저장됨":"♡ 저장";
   });
-
-  btn.classList.add("active");
-  document.getElementById("productSearch").value="";
-
-  renderProducts();
-
-  document.getElementById("products").scrollIntoView({behavior:"smooth"});
+ });
 }
 
-document.getElementById("productSearch").addEventListener("input",renderProducts);
+// 버튼 이벤트
 
-// 초기 화면
+document.querySelectorAll("[data-season]").forEach(btn=>{
+ btn.addEventListener("click",()=>{
+  renderSeason(btn.dataset.season);
+ });
+});
 
-changeSeason("autumn",document.querySelector(".season-tabs button"));
-showRanking("lip",document.querySelector(".rank-tabs button"));
+document.querySelectorAll("[data-rank]").forEach(btn=>{
+ btn.addEventListener("click",()=>{
+  renderRanking(btn.dataset.rank);
+ });
+});
+
+document.querySelectorAll("[data-filter]").forEach(btn=>{
+ btn.addEventListener("click",()=>{
+  filterProducts(btn.dataset.filter);
+ });
+});
+
+document.getElementById("search").addEventListener("input",renderProducts);
+
+// 최초 실행
+
+renderTones();
+renderSeason("autumn");
+renderRanking("lip");
 renderProducts();
 
 </script>
-
 </body>
 </html>
+
